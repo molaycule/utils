@@ -4,7 +4,7 @@ let flattenNestedObject = (obj, key = null) => {
   return Object.keys(obj).reduce((acc, cur) => {
     let nestedKey = key ? `${key}.${cur}` : cur;
     
-    if (typeof obj[cur] === "object") {
+    if (typeof obj[cur] === "object" && obj[cur] !== null) {
       return {...acc, ...flattenNestedObject(obj[cur],  nestedKey)};
     }
 
@@ -37,10 +37,7 @@ let obj = {
               u: {
                 v: 22,
                 w: 23,
-                x: {
-                  y: 25,
-                  z: 26
-                }
+                x: null
               }
             }
           }
