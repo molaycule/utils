@@ -1,2 +1,2 @@
-# utils-functions
-a collection of utility functions
+# utils
+a collection of utility functions and components
